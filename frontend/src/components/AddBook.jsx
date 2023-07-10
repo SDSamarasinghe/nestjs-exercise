@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
+import swal from "sweetalert";
 
 const AddBook = () => {
     const [title, setTitle] = useState("");
@@ -109,7 +113,7 @@ const AddBook = () => {
 </div>
 <div class="form-row">
   <div class="form-group col-md-6">
-    <label for="inputPassword4"><Price></Price></label>
+    <label for="inputPassword4">Price</label>
     <input type="number" class="form-control" id="inputPassword4" placeholder="Price"
      value={price}
      onChange={(e) => {
