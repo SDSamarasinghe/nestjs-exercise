@@ -6,15 +6,15 @@ import { UpdateBookDto } from './dto/update-book.dto';
 
 @Controller('book')
 export class BookController {
-    constructor (private bookService: BookService) {}
+  constructor(private bookService: BookService) {}
 
-    //retrieve all available books in the system
-    @Get()
-    async getAllBooks(): Promise<Book[]> {
+  //retrieve all available books in the system
+  @Get()
+  async getAllBooks(): Promise<Book[]> {
         return this.bookService.findAll();
     }
     
-    //create new book
+  //create new book
    @Post('new')
    async createBook(
     @Body()

@@ -1,19 +1,20 @@
 import { Controller, Post, Body, Get } from '@nestjs/common';
 import { AuthService } from './auth.service';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { SignUpDto } from './dto/signup.dto';
 import { LoginDto } from './dto/login.dto';
 
 @Controller('auth')
 export class AuthController {
-    constructor(private authService: AuthService){}
+  constructor(private authService: AuthService) {}
 
-    @Post('/signup')
-    signUp(@Body() SignUpDto: SignUpDto): Promise<{ token:string } > {
-        return this.authService.signUp(SignUpDto);
-    }
+  @Post('/signup')
+  signUp(@Body() SignUpDto: SignUpDto): Promise<{ token: string }> {
+    return this.authService.signUp(SignUpDto);
+  }
 
-    @Get('login')
-    login(@Body() loginDto: LoginDto): Promise<{ token:string }> {
-        return this.authService.login(loginDto);
-    }
+  @Get('login')
+  login(@Body() loginDto: LoginDto): Promise<{ token: string }> {
+    return this.authService.login(loginDto);
+  }
 }
