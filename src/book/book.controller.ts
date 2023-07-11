@@ -34,6 +34,7 @@ export class BookController {
         return this.bookService.findById(id);
     }
 
+    //update a book
     @Put(':id')
    async updateBook(
     @Param('id')
@@ -42,6 +43,14 @@ export class BookController {
     book: UpdateBookDto
    ): Promise<Book> {
     return this.bookService.updateById(id,book);
-
    }
+
+   //delete a book
+   @Delete(':id')
+    async deleteBook(
+        @Param('id')
+        id:string
+    ): Promise<Book> {
+        return this.bookService.deleteById(id);
+    }
 }
