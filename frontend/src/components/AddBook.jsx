@@ -43,7 +43,7 @@ const AddBook = () => {
    
 
     axios
-      .post("http://localhost:3000/book", book)
+      .post("http://localhost:3004/book/new", book)
       .then((response) => {
         swal({
           title: "Book Added Successfully!",
@@ -75,7 +75,7 @@ const AddBook = () => {
       errors.price = "Price is required!";
     }
     if (!category) {
-      errors.category = "phone is required!";
+      errors.category = "Category is required!";
     }
 
     
@@ -148,7 +148,7 @@ const AddBook = () => {
 </div>
 <div style={{float:"right"}}>
 <Link to="/" type="submit" class="btn btn-danger">Cancel</Link>
-<button type="submit" class="btn btn-primary" style={{marginLeft:"20px"}} onClick={saveBook}>Add People</button>
+<button type="submit" class="btn btn-primary" style={{marginLeft:"20px"}} onClick={saveBook}>Add Book</button>
 
 </div>
 </form>
