@@ -12,10 +12,6 @@ async function bootstrap() {
   //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   //   allowedHeaders: ['Content-Type', 'Authorization'],
   // });
-
-
-
-
   
 }
 bootstrap();
